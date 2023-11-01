@@ -1,0 +1,13 @@
+first and most important thing in this project is the workflow that we are maintaining 
+1.Workflow 
+ 1.1 first when we go to index.js we can see  some configure about the things we are doing  
+
+Folder structure 
+we have 3 or 4 folders in the project 
+1.first one is models were we can create a model and based on that we can create user and cart everything like that actually it is pretty simple we are just saying that we what all things are needed to store in the mongoDB and to what all things needs to be stored
+2.second folder where we will store all the middlewares need for the websites middlewares means when one routing is done then this will work like the authentication like that middlewares
+3.controller means were we create all the user and address etc.. using the controller 
+4.router means we are telling our application which url should this go and the post method works etc..
+5.utils means we are storing the ApiError response etc.. using manipulated by our self and other ApiRes and other asyncHandler etc.. are there 
+6.validators are used for validating the user registration and other in a request
+7.dotenv for storing the name variables and other credentials in that file 

@@ -1,10 +1,10 @@
 import cors from "cors";
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 import express from "express";
 import { rateLimit } from "express-rate-limit";
-// import { ApiError } from "./utils/ApiError.js";
-// import userRouter from "./routes/user.route";
-// import { DB_NAME } from "../constant";
+import { ApiError } from "./Utils/ApiError.js";
+import userRouter from "./Routes/user_router";
+import { DB_NAME } from "../Constants";
 import mongoose from "mongoose";
 const app = express();
 app.use(
