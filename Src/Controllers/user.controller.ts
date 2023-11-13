@@ -50,7 +50,8 @@ const registerUser = asyncHandler(
     await user.save({ validateBeforeSave: false });
 
     await sendEmail({
-      email: user.email,
+      from: "shahilcode@gmail.com",
+      to: user.email,
       subject: "Please verify your email",
       mailgenContent: emailVerificationMailgenContent(
         user.username,
@@ -59,7 +60,10 @@ const registerUser = asyncHandler(
         )}/api/v1/users/verify-email/${unHashedToken}`
       ),
     });
-    console.log(user.email);
+
+    //in this we created  a user and sends email also but we need some more actions to be
+    // done like show the users details excluding the confidential details like password
+    // so we are using the mongoDb method method
 
     const createdUser = await User.findById(user._id).select(
       "-password -refreshToken -emailVerificationToken -emailVerificationExpiry"

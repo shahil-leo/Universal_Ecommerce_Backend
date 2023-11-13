@@ -13,6 +13,7 @@ app.use(
     credentials: true,
   })
 );
+app.set("trust proxy", 1);
 //? rendering static images in the site
 app.use(express.static("public"));
 //? So, by using app.use(express.json()), you're telling your Express application to parse JSON data automatically from incoming requests, making it easy to work with JSON data in your route handlers or controllers.
@@ -50,4 +51,5 @@ const limiter = rateLimit({
   },
 });
 
+// app.use(limiter);
 app.use("/api/v1/users", userRouter);

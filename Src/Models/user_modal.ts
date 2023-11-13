@@ -72,11 +72,14 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
-// Define methods on the user instance
+//creating methods inside schema
+
+//*check the password is correct when login
 userSchema.methods.isPasswordCorrect = async function (password: string) {
   return await Bun.password.verify(password, this.password);
 };
 
+//*create a method where generateaccessToken using the email id and  the roles
 userSchema.methods.generateAccessToken = function () {
   return jwt.sign(
     {
